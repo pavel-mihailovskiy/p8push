@@ -6,6 +6,7 @@ module P8push
 
   APPLE_PRODUCTION_JWT_URI = 'https://api.push.apple.com'
   APPLE_DEVELOPMENT_JWT_URI = 'https://api.development.push.apple.com'
+  APPLE_SANDBOX_JWT_URI = 'https://api.sandbox.push.apple.com/'
 
   class Client
     attr_accessor :jwt_uri
@@ -19,6 +20,12 @@ module P8push
       def production
         client = self.new
         client.jwt_uri = APPLE_PRODUCTION_JWT_URI
+        client
+      end
+      
+      def sandbox
+        client = self.new
+        client.jwt_uri = APPLE_SANDBOX_JWT_URI
         client
       end
     end
