@@ -61,7 +61,7 @@ module P8push
       notifications.flatten!
 
       notifications.each_with_index do |notification, index|
-        next unless notification.kind_of?(Notification)
+        next unless notification.kind_of?(P8push::Notification)
         next if notification.sent?
         next unless notification.valid?
 
